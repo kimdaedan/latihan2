@@ -1,10 +1,16 @@
-interface BlogProp {
-  params: { id: string; title: string };
+import BlogCard from "./components/BlogCard";
+
+interface BlogDetailProps {
+  params: {
+    id: string;
+    title: string;
+  };
 }
 
-export default function BlogDetail({ params }: BlogProp) {
+export default function BlogDetail({ params }: BlogDetailProps) {
   return (
-
-    <h1>{params.title} - Detail Blog dengan ID: {params.id}</h1>
+    <div>
+      <BlogCard id={params.id} title={params.title} />
+    </div>
   );
 }
